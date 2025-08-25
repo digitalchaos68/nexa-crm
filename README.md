@@ -10,3 +10,13 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Nexa CRM Icons
+
+- SVG icons for UI components
+- PNG icons for PWA (192x192, 512x512)
+- All icons use `indigo` color for brand consistency
+
+## Usage
+- SVG: Place in `public/icons/` and use with `<img src="/icons/client.svg" />`
+- PNG: Used in `manifest.json` for PWA install
