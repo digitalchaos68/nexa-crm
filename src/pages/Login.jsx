@@ -17,7 +17,7 @@ export function Login() {
     if (error) {
       alert('Invalid login credentials')
     } else {
-      navigate('/clients', { replace: true }) // ✅ Redirect immediately
+      navigate('/clients', { replace: true }) // ✅ Force redirect
     }
   }
 
@@ -48,6 +48,15 @@ export function Login() {
           Sign In
         </button>
       </form>
+
+      <div className="mt-6 text-center">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          Don’t have an account?{' '}
+          <a href="/signup" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            Sign up
+          </a>
+        </p>
+      </div>
     </div>
   )
 }

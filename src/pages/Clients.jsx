@@ -1,10 +1,12 @@
 // src/pages/Clients.jsx
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { supabase } from '../services/supabase'
 
 export function Clients() {
   const [clients, setClients] = useState([])
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchClients()
@@ -28,10 +30,9 @@ export function Clients() {
     setLoading(false)
   }
 
-  // ✅ Only one handleLogout — remove the duplicate!
   const handleLogout = async () => {
     await supabase.auth.signOut()
-    window.location.href = '/login' // Redirect to login page
+    navigate('/login', { replace: true }) // ✅ Client-side redirect, no refresh
   }
 
   if (loading) {
